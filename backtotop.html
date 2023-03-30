@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="top_btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="33" height="33" fill="#000">
+            <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
+        </svg>
+    </button>
+    
+    <style>
+        #top_btn {
+            display: none;
+            position: fixed;
+            align-items: center;
+            justify-content: center;
+            bottom: 50px;
+            right: 50px;
+            height: 50px;
+            width: 50px;
+        }
+        body {
+            min-height: 2000px;
+        }
+    </style>
+
+    <script>
+        var top_button = document.getElementById('top_btn');
+
+        window.addEventListener('scroll',()=>{
+            if(document.documentElement.scrollTop > 200){
+                top_button.style.display = 'flex'
+            }else {
+                top_button.style.display = 'none'
+            }
+        })
+
+        top_button.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        })
+    </script>
+</body>
+</html>
